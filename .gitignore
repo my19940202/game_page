@@ -1,0 +1,5 @@
+*.un~
+logs/
+*.txt
+*.out
+node_modules

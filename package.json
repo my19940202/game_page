@@ -1,0 +1,12 @@
+{
+  "name": "game page",
+  "version": "1.0.0",
+  "description": "game page",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "log4js": "^0.6.33"
+  }
+}

@@ -1,14 +1,14 @@
 // 工具函数
 const fs = require('fs');
 module.exports = {
-    writeFile: (filename, filestr) => {
-        fs.writeFile(filename, filestr, function (err) {
-            if (err) throw err;
+    writeFile: (filename, filestr, opt, cb) => {
+        fs.writeFile(filename, filestr, opt, function (err, data) {
+            cb(err, data);
         });
     },
-    readFile: (filename, clk) => {
+    readFile: (filename, cb) => {
         fs.readFile(filename, (err, data) => {
-            clk(err, data);
+            cb(err, data);
         });
     },
     getType: (subfix) => {

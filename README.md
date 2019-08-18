@@ -4,3 +4,5 @@
 ## how
 - node game.js
 - 活动结束，统计活动时间内的log
+
+## v2

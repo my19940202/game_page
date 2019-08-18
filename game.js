@@ -14,7 +14,7 @@ log4js.configure({
         everything: {type: 'file', filename: 'game.log'}
     },
     categories: {
-        default: {appenders: ['everything'], level: 'debug'}
+        default: {appenders: ['everything'], level: 'trace'}
     }
   });
 
@@ -48,6 +48,8 @@ function getPrize() {
     };
 }
 
+util.writeFile('./asset/prize.txt', '\n', null, (err, data) => {});
+
 http.createServer((req, res) => {
     console.log('server receive request');
     let params = urllib.parse(req.url, true);
@@ -72,10 +74,14 @@ http.createServer((req, res) => {
             && params.query.result) {
         // 删除抽中奖品
         prize.splice(parseInt(params.query.idx, 10), 1);
-        log.info(
+        log.trace(
             'url=' + req.url + 'prize_len=' + prize.length
         );
-        res.end('ok');
+        let fileStr = params.query.name + ',' + params.query.result + '\n';
+        util.writeFile('./asset/prize.txt', fileStr, {flag: 'a'}, (err, data) => {
+            res.end('ok');
+            console.log('req end');
+        });
     }
 
     // 处理页面里面用到的静态文件

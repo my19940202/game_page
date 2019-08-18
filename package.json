@@ -1,12 +1,27 @@
 {
-  "name": "game page",
+  "name": "game_page",
   "version": "1.0.0",
-  "description": "game page",
-  "main": "index.js",
+  "description": "a page for company employees lucky draw",
+  "main": "game.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node game.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/my19940202/game_page.git"
+  },
+  "keywords": [
+    "lucky",
+    "draw",
+    "page"
+  ],
   "dependencies": {
-    "log4js": "^0.6.33"
-  }
+    "log4js": "^4.5.1"
+  },
+  "author": "xishengbo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/my19940202/game_page/issues"
+  },
+  "homepage": "https://github.com/my19940202/game_page#readme"
 }

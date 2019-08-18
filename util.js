@@ -1,5 +1,5 @@
 // 工具函数
-var fs = require('fs');
+const fs = require('fs');
 module.exports = {
     writeFile: (filename, filestr) => {
         fs.writeFile(filename, filestr, function (err) {
@@ -12,7 +12,7 @@ module.exports = {
         });
     },
     getType: (subfix) => {
-        var typeObj = {
+        let typeObj = {
             jpg: 'image/jpeg',
             png: 'image/png',
             html: 'text/html',
@@ -22,10 +22,10 @@ module.exports = {
         return typeObj[subfix];
     },
     geneRepeatArr: (num, item) => {
-        var arr = new Array(num);
-        for (var i = 0; i < arr.length; i++) {
+        let arr = new Array(num);
+        for (let i = 0; i < arr.length; i++) {
             arr[i] = item;
         }
         return arr;
     }
-}
+};

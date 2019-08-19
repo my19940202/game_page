@@ -77,14 +77,10 @@ function getprize() {
 let mask = document.querySelector('.mask');
 function dispModal(result, idx) {
     let imgMap = {
-        '超美化妆镜台灯': 'images',
-        '京东东礼品卡': 'images',
-        '碧然德滤水壶': 'images',
-        'ELLE保温杯礼盒': 'images',
-        '便携式胶囊咖啡机': 'images',
-        '户外很实用套装': 'images',
-        '当当当礼品卡': 'images',
-        '请找超级可爱助理MM解锁此礼包': 'images'
+        '小夜灯': 'images',
+        '坚果蓝牙音箱': 'images',
+        '花点时间月卡套餐': 'images',
+        '大闸蟹礼券': 'images'
     };
     mask.style.display = 'block';
     // set title

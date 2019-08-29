@@ -19,7 +19,7 @@ module.exports = {
             css: 'text/css',
             js: 'text/js',
             txt: 'text/plain;charset=utf-8'
-        }
+        };
         return typeObj[subfix];
     },
     geneRepeatArr: (num, item) => {

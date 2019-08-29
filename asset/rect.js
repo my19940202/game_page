@@ -77,20 +77,28 @@ function getprize() {
 let mask = document.querySelector('.mask');
 function dispModal(result, idx) {
     let imgMap = {
-        '超美化妆镜台灯': 'images',
-        '京东东礼品卡': 'images',
-        '碧然德滤水壶': 'images',
-        'ELLE保温杯礼盒': 'images',
-        '便携式胶囊咖啡机': 'images',
-        '户外很实用套装': 'images',
-        '当当当礼品卡': 'images',
-        '请找超级可爱助理MM解锁此礼包': 'images'
+        '小夜灯': {
+            img: 'images',
+            desc: '希望它能温暖你每一个加班的夜~恭喜你抽到了小夜灯！'
+        },
+        '坚果蓝牙音箱': {
+            img: 'images',
+            desc: '时尚达人怎么能少了它？恭喜你抽到了坚果蓝牙音箱！'
+        },
+        '花点时间月卡套餐': {
+            img: 'images',
+            desc: '恭喜你抽到了花点时间月卡！时尚达人怎么能少了它？'
+        },
+        '大闸蟹礼券': {
+            img: 'images',
+            desc: '天呐！你太幸运了！恭喜你抽到了终极大奖：大闸蟹礼卷！'
+        }
     };
     mask.style.display = 'block';
     // set title
-    document.getElementById('title').innerHTML = '恭喜抽到了奖品:' + result;
+    document.getElementById('title').innerHTML = imgMap[result].desc;
     // set img
-    document.getElementById('img').src = './gift/' + imgMap[result] + '.jpg';
+    document.getElementById('img').src = './gift/' + imgMap[result].img + '.jpg';
     window.result = result;
     window.idx = idx;
 }

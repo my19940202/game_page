@@ -17,7 +17,8 @@ module.exports = {
             png: 'image/png',
             html: 'text/html',
             css: 'text/css',
-            js: 'text/js'
+            js: 'text/js',
+            txt: 'text/plain;charset=utf-8'
         }
         return typeObj[subfix];
     },

@@ -2,10 +2,11 @@
 <html >
 <head>
     <meta charset="UTF-8">
-    <title>the queen's gift draw</title>
+    <title>商务搜索产品部同学抽奖用</title>
     <style>
         * {
             padding: 0;
+            font-family: 'Courier New', Courier, monospace;
         }
         .wrapper {
             position: absolute;
@@ -24,40 +25,45 @@
             user-select:none;
         }
         .rect {
-            width: 500px;
-            height: auto;
+            width: 320px;
+            height: 320px;
             border-radius: 10px;
             padding: 5px;
             background: rgba(27, 40, 101, .5);;
             font-size: 0;
         }
         h1 {
-            color: #D43E2F;
+            color: #EFC245;
             font-size: 40px;
             margin-top: -20px;
         }
         p, a {
-            color: #D43E2F;
+            color: #EFC245;
             font-weight: bolder;
         }
         .rect_inner {
-            width: 150px;
-            height: 150px;
+            width: 100px;
+            height: 100px;
             border-radius: 10px;
-            line-height: 150px;
-            border: 2px solid rgba(27, 40, 101, .1);
+            line-height: 100px;
+            border: 2px solid rgba(27, 40, 101, .05);
             color: #f1540f;
-            margin: 5px;
-            background: #FFF;
             text-align: center;
-            display: inline-block;
+            float: left;
             overflow: hidden;
-            font-size: 40px;
+            position: relative;
+        }
+        .rect_inner div {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 80px;
+            height: 80px;
             background: url(./gift.png) center center no-repeat;
-            background-size: 80% 80%;
+            background-size: cover;
         }
         .highlight {
-            border: 2px solid #d81e06;
+            border-color: #fff;
             color: #fff;
         }
         .none {
@@ -71,6 +77,18 @@
             background: rgba(0, 0, 0, .5);
             width: 100%;
             height: 100%;
+        }
+        .btn {
+            font-size: 20px;
+            padding: 0;
+            cursor: pointer;
+            background: #EFC245;
+            border-radius: 50px;
+            color: #fff;
+            overflow: hidden;
+        }
+        .btn::after {
+            content: "点击抽奖";
         }
 
         .tip-modal {
@@ -126,22 +144,20 @@
 <div class="wrapper">
     
     <div style="text-align: center;">
-        <h1 title="求介绍妹子,微信:my19940202"> THE QUEEN'S GIFT DRAW</h1>
-        <p>仅限展示广告平台部女同学抽奖用，其他捣乱or测试<br>同学将被助理MM抓起来吊打 </p>
+        <p>仅供商务搜索产品部同学抽奖用，祝大家中秋快乐！</p>
         <div class="rect">
-            <div class="rect_inner rect0"></div>
-            <div class="rect_inner rect1"></div>
-            <div class="rect_inner rect2"></div>
-            <div class="rect_inner rect7"></div>
-            <div class="rect_inner btn" style="font-size: 30px;cursor: pointer;background: #D43E2F; border-radius: 90px;color: #fff;">点击抽奖</div>
-            <div class="rect_inner rect3"></div>
-            <div class="rect_inner rect6"></div>
-            <div class="rect_inner rect5"></div>
-            <div class="rect_inner rect4"></div>
+            <div class="rect_inner rect0"><div></div></div>
+            <div class="rect_inner rect1"><div></div></div>
+            <div class="rect_inner rect2"><div></div></div>
+            <div class="rect_inner rect7"><div></div></div>
+            <div class="rect_inner btn"></div>
+            <div class="rect_inner rect3"><div></div></div>
+            <div class="rect_inner rect6"><div></div></div>
+            <div class="rect_inner rect5"><div></div></div>
+            <div class="rect_inner rect4"><div></div></div>
         </div>
         <div class="mask">
                 <div class="tip-modal">
-                    <!-- todo这部分交互event -->
                     <img id='img' src="./gift.png" width="200" height="200" alt="12">
                     <h5 id='title'></h3>
                     <br>

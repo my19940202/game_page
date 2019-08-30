@@ -78,19 +78,19 @@ let mask = document.querySelector('.mask');
 function dispModal(result, idx) {
     let imgMap = {
         '小夜灯': {
-            img: 'images',
+            img: 'light',
             desc: '希望它能温暖你每一个加班的夜~恭喜你抽到了小夜灯！'
         },
         '坚果蓝牙音箱': {
-            img: 'images',
+            img: 'yingxiang',
             desc: '时尚达人怎么能少了它？恭喜你抽到了坚果蓝牙音箱！'
         },
         '花点时间月卡套餐': {
-            img: 'images',
-            desc: '恭喜你抽到了花点时间月卡！时尚达人怎么能少了它？'
+            img: 'flower',
+            desc: '我猜屏幕前面的你一定很好看！～恭喜你抽到了花点时间月卡！'
         },
         '大闸蟹礼券': {
-            img: 'images',
+            img: 'pangxie',
             desc: '天呐！你太幸运了！恭喜你抽到了终极大奖：大闸蟹礼卷！'
         }
     };

@@ -27,7 +27,7 @@ process.on('uncaughtException', function (err) {
 
 // 奖池init
 let prize = [];
-for(key in conf.prizeList) {
+for (key in conf.prizeList) {
     prize = prize.concat(util.geneRepeatArr(conf.prizeList[key], key));
 }
 
@@ -77,7 +77,10 @@ http.createServer((req, res) => {
         log.trace(
             'url=' + req.url + 'prize_len=' + prize.length
         );
-        let fileStr = params.query.name + ',' + params.query.result + '\n';
+        // TODO加时间
+        let fileStr = new Date().toISOString() + ','
+            + params.query.name + ','
+            + params.query.result + '\n';
         util.writeFile('./asset/prize.txt', fileStr, {flag: 'a'}, (err, data) => {
             res.end('ok');
             console.log('req end');

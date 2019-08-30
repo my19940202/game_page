@@ -78,7 +78,7 @@ http.createServer((req, res) => {
             'url=' + req.url + 'prize_len=' + prize.length
         );
         // TODO加时间
-        let fileStr = new Date().toISOString() + ','
+        let fileStr = new Date().toLocaleString() + ','
             + params.query.name + ','
             + params.query.result + '\n';
         util.writeFile('./asset/prize.txt', fileStr, {flag: 'a'}, (err, data) => {

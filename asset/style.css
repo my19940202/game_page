@@ -1,0 +1,133 @@
+* {
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+.wrapper {
+    position: absolute;
+    background: url(./img.jpg) no-repeat;
+    background-size: cover;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+}
+.rect {
+    width: 320px;
+    height: 320px;
+    border-radius: 10px;
+    padding: 5px;
+    background: rgba(27, 40, 101, .5);;
+    margin: 0 auto;
+}
+h1 {
+    color: #EFC245;
+    font-size: 40px;
+    margin-top: -20px;
+}
+p, a {
+    color: #EFC245;
+    font-weight: bolder;
+}
+.rect_inner {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    line-height: 100px;
+    border: 2px solid rgba(27, 40, 101, .05);
+    color: #f1540f;
+    text-align: center;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.rect_inner div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    height: 80px;
+    background: url(./gift.png) center center no-repeat;
+    background-size: cover;
+}
+.highlight {
+    border-color: #fff;
+    color: #fff;
+}
+.none {
+    display: none;
+}
+.mask {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+}
+.btn {
+    font-size: 20px;
+    padding: 0;
+    cursor: pointer;
+    background: #EFC245;
+    border-radius: 50px;
+    color: #fff;
+    overflow: hidden;
+}
+.btn::after {
+    content: "点击抽奖";
+}
+
+.tip-modal {
+    padding-top: 20px;
+    text-align: center;
+    position: absolute;
+    top: 200px;
+    left: 30%;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    width: 40%;
+    height: 300px;
+}
+.wrapper input,
+.tip-modal input {
+    width: 300px;
+    height: 25px;
+    margin-bottom: 10px;
+    color: #FFF;
+    font-size: 14px;
+    height: 32px;
+    line-height: 32px!important;
+    padding: 6px 9px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e6e6e6;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.wrapper input::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.tip-modal button{
+    margin-top: 20px;
+    width: 50px;
+    height: 25px;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 3px;
+    background-color: #1890ff;
+    border-color: #1890ff;
+    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+    box-shadow: 0 2px 0 rgba(0,0,0,0.045);
+}

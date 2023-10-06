@@ -30,10 +30,12 @@ h1 {
     color: #EFC245;
     font-size: 40px;
     margin-top: -20px;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 p, a {
     color: #EFC245;
     font-weight: bolder;
+    text-shadow: black 0.1em 0.1em 0.2em;
 }
 .rect_inner {
     width: 100px;

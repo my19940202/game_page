@@ -16,13 +16,13 @@ log4js.configure({
     categories: {
         default: {appenders: ['everything'], level: 'trace'}
     }
-  });
+});
 
 const log = log4js.getLogger();
 
 process.on('uncaughtException', function (err) {
-        log.fatal(err);
-        log.fatal(err.stack);
+    log.fatal(err);
+    log.fatal(err.stack);
 });
 
 // 奖池init
@@ -49,11 +49,23 @@ function getPrize() {
 }
 
 util.writeFile('./asset/prize.txt', '\n', null, (err, data) => {});
-
+console.log('visit http://127.0.0.1:8811/asset/game.html to get prize');
 http.createServer((req, res) => {
-    console.log('server receive request');
-    let params = urllib.parse(req.url, true);
-
+    console.log('server receive request', req.url);
+    const params = urllib.parse(req.url, true);
+    // 处理页面里面用到的静态文件
+    if (params.path && params.path.indexOf('asset') !== -1) {
+        let subfix = params.path.split('.')[1];
+        util.readFile('.' + params.path, (err, data) => {
+            res.writeHead(200, {
+                'Content-Type': util.getType(subfix)
+            });
+            res.end(data);
+        });
+        log.info(
+            'file_req=' + params.path
+        );
+    }
     // 获取奖品信息的接口
     if (params.query && params.query.path === 'getprize') {
         let str = JSON.stringify(getPrize());
@@ -77,7 +89,6 @@ http.createServer((req, res) => {
         log.trace(
             'url=' + req.url + 'prize_len=' + prize.length
         );
-        // TODO加时间
         let fileStr = new Date().toLocaleString() + ','
             + params.query.name + ','
             + params.query.result + '\n';
@@ -86,19 +97,4 @@ http.createServer((req, res) => {
             console.log('req end');
         });
     }
-
-    // 处理页面里面用到的静态文件
-    if (params.path && params.path.indexOf('asset') !== -1) {
-        let subfix = params.path.split('.')[1];
-        util.readFile('.' + params.path, (err, data) => {
-            res.writeHead(200, {
-                'Content-Type': util.getType(subfix)
-            });
-            res.end(data);
-        });
-        log.info(
-            'file_req=' + params.path
-        );
-    }
 }).listen(conf.port);
-
